@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luas Jajar Genjang</title>
+</head>
+<body>
+    <script>
+        function hitungLuasJajarGenjang(alas, tinggi) {  
+            var luas = alas * tinggi;  
+            return luas;
+        }
+        
+        const alas = prompt("Masukkan alas: ");
+        const tinggi = prompt("Masukkan tinggi: ");
+        const hasil = hitungLuasJajarGenjang(alas, tinggi);
+        
+        alert("Luas jajar genjang adalah " + hasil);
+    </script>
+</body>
+</html>

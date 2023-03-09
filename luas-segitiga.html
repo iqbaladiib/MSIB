@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luas segitiga</title>
+</head>
+<body>
+    <script>
+        function hitungLuasSegitiga(alas, tinggi) {  
+            var luas = (alas * tinggi) / 2;  
+            return luas;
+        }
+        
+        const alas = prompt("Masukkan alas: ");
+        const tinggi = prompt("Masukkan tinggi: ");
+        const hasil = hitungLuasSegitiga(alas, tinggi);
+        
+        alert("Luas segitiga adalah " + hasil);
+    </script>
+</body>
+</html>
