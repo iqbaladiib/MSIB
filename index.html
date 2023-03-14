@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //array of object
+        // atau array didalam array
+        // atau arraya yang menyimpan array
+    
+        let p1 = {nama:"Kepin", nilai:80};
+        let p2 = {nama:"Adip", nilai:92};
+        let p3 = {nama:"Uus", nilai:82};
+        let p4 = {nama:"Diah", nilai:66};
+        let p5 = {nama:"Budi", nilai:50};
+    
+        let person = [p1,p2,p3,p4,p5];
+        
+    
+    
+    </script>
+    <h3>
+        <table style="padding: 10; text-align: center; width: 100%;">
+            <thead style="background-color: #c1121f;">
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Nilai</th>
+                    <th>Grade</th>
+                    <th>Predikat</th>
+                    <th>Keterangan</th>
+                </tr>
+            </thead>
+            <tbody style="font-weight: normal;">
+                <script>
+                    var no = 1;
+                    for (p of person){
+                       let ket = (p.nilai >= 60)? "Lulus" : "Gagal";
+    
+                       //set grade A - E (menggunakan if multi kondisi)
+                       // A = 90 - 100, B 80 - 89 dan seterusnya sampai E
+    
+                       //set predikat (menggunakan swtich case)
+    
+                       //A = Sangat baik, B = Baik, C = Cukup, D= Kurang, E = SAngat kurang
+                       //set warna warni table menggunakan looping
+    
+                       function grade(nilai) {
+                        let grades;
+                        if(nilai >= 90 && nilai <= 100){
+                            grades = "A"
+                        } else if (nilai >=80){
+                            grades = "B"
+                        } else if (nilai >=70){
+                            grades = "C"
+                        } else if (nilai >=60){
+                            grades = "D"
+                        } else {
+                            grades ="E"
+                        };
+    
+                        return grades
+                        
+                       };
+    
+                       function predikat(grade) {
+                        let keterangan;
+                        switch (grade) {
+                            case "A":
+                                keterangan = "Sangat Baik"
+                                break;
+                            case "B":
+                                keterangan = "Baik"
+                                break;
+                            case "C":
+                                keterangan ="Cukup"
+                                break;
+                            case "D":
+                                keterangan = "Kurang"
+                                break;
+                            case "E":
+                                keterangan = "Sangat Kurang"
+                                break;
+                        
+                            default:
+                                keterangan = "Tidak Ada Nilai"
+                        };
+    
+                        return keterangan
+                        
+                       }
+    
+                       let hasilGrading = grade(p.nilai);
+                       let hasilPredikat = predikat(hasilGrading);
+    
+                       function bgColors() {
+                        let warna;
+                        if (no % 2){
+                            warna = "ef233c"
+                        } else {
+                            warna = "edafb8"
+                        }
+    
+                        return warna;
+                        
+                       }
+    
+                       let bgcolor = bgColors()
+                       
+                        document.write(`<tr bgcolor=${bgcolor}>
+                    <td>${no++}</td>
+                    <td>${p.nama}</td>
+                    <td>${p.nilai}</td>
+                    <td>${hasilGrading}</td>
+                    <td>${hasilPredikat}</td>
+                    <td>${ket}</td>
+                </tr>`);
+            }
+            </script>
+            </tbody>
+        </table>
+    </h3>
+</body>
+</html>
