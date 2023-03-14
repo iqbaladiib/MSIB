@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const jabatan = prompt("masukan jabatan");
+        const gajiPokok = getGajiPokok(jabatan);
+        const tunjanganJabatan = gajiPokok * 0.1;
+        const bpjs = gajiPokok * 0.1;
+        const tunjanganKeluarga = isMenikah() ? gajiPokok * 0.1 : 0;
+        const totalPendapatan = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+        console.log(`Data Pegawai:
+        Jabatan: ${jabatan}
+        Gaji Pokok: ${gajiPokok} Juta
+        Tunjangan Jabatan: ${tunjanganJabatan} Juta
+        BPJS: ${bpjs} Jutax
+        Tunjangan Keluarga: ${tunjanganKeluarga} Juta
+        Total Pendapatan: ${totalPendapatan} Juta`);
+
+        function getGajiPokok(jabatan) {
+            switch (jabatan.toLowerCase()) {
+            case 'manager':
+            return 10;
+            case 'asisten manager':
+            return 8;
+            case 'staff':
+            return 5;
+            default:
+            return 0;
+        }
+}
+
+        function isMenikah(status) {
+            let tunjangan_menikah = status == "menikah" ? gajipokok * 0.1 : 0;
+            true;
+}
+    </script>
+</body>
+</html>
